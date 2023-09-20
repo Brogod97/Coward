@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @font-face {
   font-family: "coward";
   src: url("../../assets/fonts/coward.eot");
@@ -1971,184 +1970,164 @@ i {
   }
 }
 
-.contest-top h3 {
-  padding-top: 15px;
+.nav {
+  border-bottom: 1px solid #e0e2e7;
 }
-.contest-top h2 {
-  padding-top: 20px;
+.nav-search {
+  margin-bottom: 5px;
 }
-.contest-top h6 {
-  padding-top: 20px;
-  color: #8c8d96;
+
+.chat {
+  margin-top: 50px;
 }
-.contest-top pre {
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  padding-top: 5px;
-  font-weight: bold;
-}
-.contest-top .status {
+.chat-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 10px;
-  width: 55px;
-  height: 25px;
-  border: 1px solid #b2b3b9;
-  border-radius: 5px;
-  margin-top: 22px;
+  height: 600px;
+  border: 1px solid #e0e2e7;
+  border-radius: 20px;
 }
-.contest-top #awards-status {
-  margin-left: -25px;
+.chat-room-list-area {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  flex-basis: 25%;
+  height: 100%;
+  border-right: 1px solid #e0e2e7;
 }
-@media screen and (min-width: 768px) {
-  .contest-top .status {
-    font-size: 12px;
-    width: 70px;
-    height: 25px;
-  }
-  .contest-top #awards-status {
-    margin: 55px 0 0 285px;
-    position: absolute;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .contest-top .status {
-    font-size: 12px;
-    width: 70px;
-    height: 25px;
-  }
-  .contest-top #awards-status {
-    margin: 55px 0 0 480px;
-    position: absolute;
-  }
-}
-
-.contest .card {
+.chat-room-list-area-title {
+  flex-basis: 10%;
   width: 100%;
-  height: 160px;
-  border-radius: 10px;
-  border: 1px solid #e0e2e7;
-  margin-top: 30px;
+  border-bottom: 1px solid #e0e2e7;
+  padding: 20px;
 }
-.contest .card img {
-  width: 50px;
-  border-radius: 500px;
-  border: 1px solid #e0e2e7;
+.chat-room-list-area-list {
+  flex-basis: 90%;
+  width: 100%;
+  padding: 10px 20px;
+  overflow: hidden;
 }
-.contest .card .profile-section {
-  display: flex;
-  margin: 20px 0 30px 25px;
+.chat-room-list-area-list-inner {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
 }
-.contest .card .profile-section .coding-type {
+.chat-room-list-area-list-inner .chat-user {
   display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: -0.005em;
+  justify-content: flex-start;
+  cursor: pointer;
+  width: 100%;
+  height: 50px;
+  transition: 0.3s;
+  padding: 0 10px;
+  border-radius: 5px;
+}
+.chat-room-list-area-list-inner .chat-user:hover {
+  background-color: #f1f1f1;
   color: #3aacf8;
-  width: 35px;
-  height: 20px;
-  border: 1px solid #3aacf8;
-  border-radius: 5px;
-  margin-top: 4px;
+  font-weight: 700;
 }
-.contest .card .profile-section select {
+.chat-room-list-area-list-inner .chat-user-profile {
+  margin-right: 10px;
+}
+.chat-room-list-area-list-inner .chat-user-nick {
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+}
+.chat-message-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 75%;
+  height: 100%;
+}
+.chat-message-area-board {
+  width: 100%;
+  height: 100%;
+  background-color: #f8f8f8;
+  position: relative;
+  border-radius: 20px;
+}
+.chat-message-area-board > img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.chat-message-area-board-change {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #f8f8f8;
+  border-radius: 0 20px 20px 0;
+  padding: 20px;
+}
+.chat-message-area-board-change .message-box-area {
+  flex-basis: 95%;
+  width: 100%;
+}
+.chat-message-area-board-change .message-box-area .message-box {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  overflow: hidden;
+}
+.chat-message-area-board-change .message-box-area .message-box-profile {
+  margin-right: 10px;
+}
+.chat-message-area-board-change .message-box-area .message-box .message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   font-size: 12px;
   line-height: 16px;
   letter-spacing: -0.005em;
-  height: 20px;
+  padding: 5px 10px;
+  background-color: #3aacf8;
+  color: white;
+  font-weight: 500;
+  height: auto;
+  border-radius: 10px;
+}
+.chat-message-area-board-change .message-input-box-area {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-basis: 5%;
+  width: 100%;
+}
+.chat-message-area-board-change .message-input-box-area textarea {
+  width: 350px;
+  height: 30px;
+  background-color: #fff;
   border: 1px solid #e0e2e7;
-  border-radius: 5px;
-  margin: 4px 0 0 15px;
+  border-radius: 30px;
+  padding: 7px 16px;
+  font-size: 12px;
+  caret-color: #3aacf8;
+  resize: none;
+  margin-right: 10px;
 }
-.contest .card .profile-section .one-line-intro {
-  font-size: 14px;
-  margin: 10px 0 0 30px;
-}
-.contest .card .profile-name {
-  padding: 5px 10px 0 30px;
-}
-.contest .card .profile-name-div {
-  display: flex;
-}
-.contest .card .profile-button-wrapper {
+.chat-message-area-board-change .message-input-box-area button {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.contest .card .profile-button-wrapper .btn-outlined {
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  width: 110px;
-  height: 35px;
-  background-color: #abdeff;
-  color: #028ae2;
-  border: 0;
-}
-.contest .card .profile-button-wrapper .btn-outlined:hover {
-  background-color: #028ae2;
-  color: #fff;
-}
-.contest .card .profile-button-wrapper .btn-primary {
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  width: 110px;
-  height: 35px;
-  margin-left: 30px;
-}
-.contest-button-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 30px;
-}
-.contest-button-wrapper button {
-  font-size: 18px;
-  line-height: 28px;
-  letter-spacing: -0.02em;
-  color: #fff;
-  background-color: #8c8d96;
-  width: 120px;
-  height: 35px;
-  margin: 20px;
-}
-@media screen and (min-width: 768px) {
-  .contest-button-wrapper button {
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: -0.01em;
-    width: 150px;
-    height: 40px;
-    margin: 40px;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .contest-button-wrapper button {
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: -0.01em;
-    width: 150px;
-    height: 40px;
-    margin: 40px;
-  }
-}
-
-.modal {
-  display: none; /* 초기에 숨겨진 상태 */
-  /* 기타 스타일 속성들 */
-}
-
-.footer {
-  margin-top: 100px;
-}
-
-.downloadBtn {
-  width: 300px;
-  height: 10;
-  margin-left: 10px;
-}/*# sourceMappingURL=winnerSelect.css.map */
+  width: 50px;
+  height: 28px;
+  border-radius: 30px;
+  font-size: 12px;
+  color: #8c8d96;
+}/*# sourceMappingURL=chat.css.map */

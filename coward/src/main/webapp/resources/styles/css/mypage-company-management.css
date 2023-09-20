@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @font-face {
   font-family: "coward";
   src: url("../../assets/fonts/coward.eot");
@@ -1971,184 +1970,107 @@ i {
   }
 }
 
-.contest-top h3 {
-  padding-top: 15px;
-}
-.contest-top h2 {
-  padding-top: 20px;
-}
-.contest-top h6 {
-  padding-top: 20px;
-  color: #8c8d96;
-}
-.contest-top pre {
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  padding-top: 5px;
-  font-weight: bold;
-}
-.contest-top .status {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 10px;
-  width: 55px;
-  height: 25px;
-  border: 1px solid #b2b3b9;
-  border-radius: 5px;
-  margin-top: 22px;
-}
-.contest-top #awards-status {
-  margin-left: -25px;
-}
-@media screen and (min-width: 768px) {
-  .contest-top .status {
-    font-size: 12px;
-    width: 70px;
-    height: 25px;
-  }
-  .contest-top #awards-status {
-    margin: 55px 0 0 285px;
-    position: absolute;
-  }
-}
 @media screen and (min-width: 1200px) {
-  .contest-top .status {
-    font-size: 12px;
-    width: 70px;
-    height: 25px;
-  }
-  .contest-top #awards-status {
-    margin: 55px 0 0 480px;
-    position: absolute;
+  .profile-wrapper {
+    width: 850px;
   }
 }
 
-.contest .card {
-  width: 100%;
-  height: 160px;
-  border-radius: 10px;
-  border: 1px solid #e0e2e7;
-  margin-top: 30px;
-}
-.contest .card img {
-  width: 50px;
-  border-radius: 500px;
-  border: 1px solid #e0e2e7;
-}
-.contest .card .profile-section {
-  display: flex;
-  margin: 20px 0 30px 25px;
-}
-.contest .card .profile-section .coding-type {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: -0.005em;
-  color: #3aacf8;
-  width: 35px;
-  height: 20px;
-  border: 1px solid #3aacf8;
-  border-radius: 5px;
-  margin-top: 4px;
-}
-.contest .card .profile-section select {
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: -0.005em;
-  height: 20px;
-  border: 1px solid #e0e2e7;
-  border-radius: 5px;
-  margin: 4px 0 0 15px;
-}
-.contest .card .profile-section .one-line-intro {
-  font-size: 14px;
-  margin: 10px 0 0 30px;
-}
-.contest .card .profile-name {
-  padding: 5px 10px 0 30px;
-}
-.contest .card .profile-name-div {
-  display: flex;
-}
-.contest .card .profile-button-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.contest .card .profile-button-wrapper .btn-outlined {
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  width: 110px;
-  height: 35px;
-  background-color: #abdeff;
-  color: #028ae2;
-  border: 0;
-}
-.contest .card .profile-button-wrapper .btn-outlined:hover {
-  background-color: #028ae2;
-  color: #fff;
-}
-.contest .card .profile-button-wrapper .btn-primary {
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  width: 110px;
-  height: 35px;
-  margin-left: 30px;
-}
-.contest-button-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 30px;
-}
-.contest-button-wrapper button {
+.mypage .title {
   font-size: 18px;
   line-height: 28px;
   letter-spacing: -0.02em;
-  color: #fff;
-  background-color: #8c8d96;
-  width: 120px;
-  height: 35px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.mypage .title-wrapper {
+  border-bottom: 1px solid #e0e2e7;
+  margin-bottom: 28px;
+}
+.mypage .btn-secondary {
+  background-color: #f8f8f8;
+}
+.mypage .btn-wrapper-status {
   margin: 20px;
 }
-@media screen and (min-width: 768px) {
-  .contest-button-wrapper button {
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: -0.01em;
-    width: 150px;
-    height: 40px;
-    margin: 40px;
-  }
-}
 @media screen and (min-width: 1200px) {
-  .contest-button-wrapper button {
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: -0.01em;
-    width: 150px;
-    height: 40px;
-    margin: 40px;
+  .mypage .btn-wrapper-status {
+    margin-top: 0;
   }
 }
 
-.modal {
-  display: none; /* 초기에 숨겨진 상태 */
-  /* 기타 스타일 속성들 */
+.contest-slider-card {
+  height: 240px;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+  margin: 0 10px 30px 0;
+  position: relative;
+}
+.contest-slider-card.is-hover .contest-slider-card-info {
+  transform: translate3d(0, -55%, 0);
+}
+.contest-slider-card-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 180px;
+  overflow: hidden;
+}
+.contest-slider-card-img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.contest-slider-card-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  height: 95px;
+  width: 100%;
+  padding: 10px;
+  background-color: #fff;
+}
+.contest-slider-card-info-title {
+  width: 100%;
+  font-weight: 600;
+}
+.contest-slider-card-info-title p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.contest-slider-card-info-detail p {
+  display: inline-block;
+}
+.contest-slider-card-info-detail p:nth-child(1) {
+  color: #8c8d96;
+  font-weight: 500;
+  margin-right: 10px;
 }
 
-.footer {
-  margin-top: 100px;
+.scroll {
+  overflow-x: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  max-height: 520px;
+  width: 100%;
+  justify-content: center;
 }
-
-.downloadBtn {
-  width: 300px;
-  height: 10;
-  margin-left: 10px;
-}/*# sourceMappingURL=winnerSelect.css.map */
+.scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.scroll::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.scroll::-webkit-scrollbar-thumb {
+  background-color: #8c8d96;
+  border-radius: 30px;
+}/*# sourceMappingURL=mypage-company-management.css.map */

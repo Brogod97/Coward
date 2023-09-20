@@ -1971,184 +1971,310 @@ i {
   }
 }
 
-.contest-top h3 {
-  padding-top: 15px;
-}
-.contest-top h2 {
-  padding-top: 20px;
-}
-.contest-top h6 {
-  padding-top: 20px;
-  color: #8c8d96;
-}
-.contest-top pre {
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  padding-top: 5px;
-  font-weight: bold;
-}
-.contest-top .status {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 10px;
-  width: 55px;
-  height: 25px;
-  border: 1px solid #b2b3b9;
-  border-radius: 5px;
-  margin-top: 22px;
-}
-.contest-top #awards-status {
-  margin-left: -25px;
-}
-@media screen and (min-width: 768px) {
-  .contest-top .status {
-    font-size: 12px;
-    width: 70px;
-    height: 25px;
-  }
-  .contest-top #awards-status {
-    margin: 55px 0 0 285px;
-    position: absolute;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .contest-top .status {
-    font-size: 12px;
-    width: 70px;
-    height: 25px;
-  }
-  .contest-top #awards-status {
-    margin: 55px 0 0 480px;
-    position: absolute;
-  }
-}
-
-.contest .card {
+/***** 모바일 *****/
+/* 네비게이션 바 */
+.category {
   width: 100%;
-  height: 160px;
+  background-color: #f8f8f8;
+  margin-bottom: 20px;
+}
+.category-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 10px;
+  text-align: center;
+  list-style-type: none;
+}
+.category-bar li {
+  width: 100%;
+  height: 100%;
+  padding: 14px 0;
+  border-bottom: 2px solid #f8f8f8;
+}
+.category-bar li:hover {
+  border-bottom: 2px solid #3aacf8;
+  transition: 0.3s;
+}
+
+.introduce-title {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  margin-bottom: 15px;
+  font-weight: 700;
+  padding: 8px;
+  border-bottom: 1px solid #e0e2e7;
+}
+
+.progress {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 65px;
+  /* 상태표시 동그라미 */
+  /* 상태 표시 색 */
+  /* 모집 중 */
+  /* 심사 중 */
+  /* 완료 */
+}
+.progress-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  border: 1px solid #e0e2e7;
   border-radius: 10px;
-  border: 1px solid #e0e2e7;
-  margin-top: 30px;
+  padding: 14px;
+  margin-bottom: 20px;
 }
-.contest .card img {
-  width: 50px;
-  border-radius: 500px;
-  border: 1px solid #e0e2e7;
+.progress-color {
+  width: 8px;
+  height: 8px;
+  margin-right: 8px;
+  border-radius: 50%;
 }
-.contest .card .profile-section {
+.progress .recruiting {
+  background-color: #3aacf8;
+}
+.progress .under-review {
+  background-color: #ffc200;
+}
+.progress .complete {
+  background-color: #f86d7d;
+}
+.progress-text {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.005em;
+}
+
+.contest {
+  /* 주최, 남은 기간 가로 정렬*/
+  /* 공모전 이름, content 세로 정렬 */
+}
+.contest-title {
   display: flex;
-  margin: 20px 0 30px 25px;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  font-weight: 600;
 }
-.contest .card .profile-section .coding-type {
+.contest-title p {
+  line-height: 1.2em;
+}
+.contest-content {
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 12px;
   line-height: 16px;
   letter-spacing: -0.005em;
-  color: #3aacf8;
-  width: 35px;
-  height: 20px;
-  border: 1px solid #3aacf8;
-  border-radius: 5px;
-  margin-top: 4px;
+  width: 250px;
 }
-.contest .card .profile-section select {
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: -0.005em;
-  height: 20px;
-  border: 1px solid #e0e2e7;
-  border-radius: 5px;
-  margin: 4px 0 0 15px;
-}
-.contest .card .profile-section .one-line-intro {
-  font-size: 14px;
-  margin: 10px 0 0 30px;
-}
-.contest .card .profile-name {
-  padding: 5px 10px 0 30px;
-}
-.contest .card .profile-name-div {
+.contest-mid {
   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
 }
-.contest .card .profile-button-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.contest .card .profile-button-wrapper .btn-outlined {
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  width: 110px;
-  height: 35px;
-  background-color: #abdeff;
-  color: #028ae2;
-  border: 0;
-}
-.contest .card .profile-button-wrapper .btn-outlined:hover {
-  background-color: #028ae2;
-  color: #fff;
-}
-.contest .card .profile-button-wrapper .btn-primary {
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  width: 110px;
-  height: 35px;
-  margin-left: 30px;
-}
-.contest-button-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 30px;
-}
-.contest-button-wrapper button {
-  font-size: 18px;
-  line-height: 28px;
-  letter-spacing: -0.02em;
-  color: #fff;
-  background-color: #8c8d96;
+.contest-company {
   width: 120px;
-  height: 35px;
-  margin: 20px;
-}
-@media screen and (min-width: 768px) {
-  .contest-button-wrapper button {
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: -0.01em;
-    width: 150px;
-    height: 40px;
-    margin: 40px;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .contest-button-wrapper button {
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: -0.01em;
-    width: 150px;
-    height: 40px;
-    margin: 40px;
-  }
+  font-size: 9px;
 }
 
-.modal {
-  display: none; /* 초기에 숨겨진 상태 */
-  /* 기타 스타일 속성들 */
-}
-
-.footer {
-  margin-top: 100px;
-}
-
-.downloadBtn {
-  width: 300px;
-  height: 10;
+.deadline {
+  width: 30px;
+  font-size: 9px;
   margin-left: 10px;
-}/*# sourceMappingURL=winnerSelect.css.map */
+}
+
+.company-profile {
+  width: 35px;
+  height: 35px;
+  margin-right: 12px;
+}
+.company-profile-img {
+  width: 100%;
+  height: 100%;
+}
+.company-profile-left {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.profile-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/***** 태블릿 *****/
+@media screen and (min-width: 768px) {
+  /* 배너 */
+  .banner-top {
+    margin-bottom: 0;
+  }
+  /* 네비게이션 바 */
+  .category-bar {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+  }
+  /* 소제목 스타일 */
+  .introduce-title {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+  }
+  .contest-title {
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: -0.005em;
+    font-weight: 600;
+  }
+  .contest-company {
+    width: 100%;
+  }
+  .company-profile {
+    margin-right: 15px;
+  }
+  .company-img {
+    width: 30px;
+    height: 30px;
+  }
+}
+/***** 웹 *****/
+@media screen and (min-width: 1200px) {
+  .empty-box {
+    width: 100%;
+    height: 700px;
+  }
+  .full {
+    position: relative;
+  }
+  .web-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1040px;
+    height: 715px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+  }
+  /* 네비게이션 바 */
+  .category {
+    width: 100%;
+    background-color: #f8f8f8;
+  }
+  .category-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 14px 0;
+  }
+  .category li {
+    padding: 5px 0 5px 10px;
+    text-align: left;
+    border: none;
+  }
+  .category li:hover {
+    background-color: #abdeff;
+    color: white;
+    border: none;
+  }
+  .category li a {
+    width: 100%;
+  }
+  .category-web {
+    height: 603px;
+    background-color: white;
+  }
+  /* 메인과 위치 맞추기 위해 */
+  aside {
+    height: 650px;
+  }
+  .profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid #8c8d96;
+    border-bottom: 1px solid #8c8d96;
+  }
+  .profile-wrapper {
+    padding: 15px 30px;
+    border: 1px solid #e0e2e7;
+    border-radius: 10px;
+  }
+  .profile-img {
+    width: 125px;
+    height: 125px;
+    margin: 30px 0 10px;
+  }
+  .profile-img-box {
+    padding: 0 15px;
+  }
+  .profile-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 15px;
+  }
+  .profile-type {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 13px;
+    padding: 3px;
+    margin-right: 6px;
+    border: 1px solid #3aacf8;
+    border-radius: 5px;
+    font-size: 6px;
+    color: #3aacf8;
+  }
+  .profile-nick {
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    color: #3f4150;
+  }
+  .profile-mypage {
+    width: 125px;
+    text-align: left;
+    font-size: 20px;
+    font-weight: 500;
+    padding-bottom: 10px;
+    margin-left: 10px;
+  }
+  /* 메인과 크기 맞추기 위해 */
+  .contest-management {
+    width: 845px;
+    height: 695px;
+    padding: 15px 30px;
+    margin: 0 10px;
+    border: 1px solid #e0e2e7;
+    border-radius: 10px;
+  }
+  .progress-box-group {
+    overflow-y: scroll;
+    height: 580px;
+  }
+  .progress-box-group::-webkit-scrollbar {
+    display: none;
+  }
+}/*# sourceMappingURL=contest-progress.css.map */

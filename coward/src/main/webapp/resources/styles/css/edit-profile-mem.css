@@ -1971,184 +1971,423 @@ i {
   }
 }
 
-.contest-top h3 {
-  padding-top: 15px;
+/***** 모바일 *****/
+/* 네비게이션 바 */
+.category {
+  width: 100%;
+  background-color: #f8f8f8;
+  margin-bottom: 20px;
 }
-.contest-top h2 {
-  padding-top: 20px;
+.category-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 10px;
+  padding: 14px 0;
+  text-align: center;
+  list-style-type: none;
 }
-.contest-top h6 {
-  padding-top: 20px;
+
+/******* 모바일은 여기까지 복사해가면 됩니답 *******/
+.introduce-title {
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  font-weight: 700;
+  padding: 10px;
+}
+
+.profile-user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100px;
+  margin: 15px;
+}
+.profile-img {
+  width: 115px;
+  height: 115px;
+  margin: 8px;
+}
+.profile-edit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.edit-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  right: -5px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #f8f8f8;
+  cursor: pointer;
+}
+
+.ic-camera {
+  font-size: 13px;
   color: #8c8d96;
 }
-.contest-top pre {
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  padding-top: 5px;
-  font-weight: bold;
-}
-.contest-top .status {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 10px;
-  width: 55px;
-  height: 25px;
-  border: 1px solid #b2b3b9;
-  border-radius: 5px;
-  margin-top: 22px;
-}
-.contest-top #awards-status {
-  margin-left: -25px;
-}
-@media screen and (min-width: 768px) {
-  .contest-top .status {
-    font-size: 12px;
-    width: 70px;
-    height: 25px;
-  }
-  .contest-top #awards-status {
-    margin: 55px 0 0 285px;
-    position: absolute;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .contest-top .status {
-    font-size: 12px;
-    width: 70px;
-    height: 25px;
-  }
-  .contest-top #awards-status {
-    margin: 55px 0 0 480px;
-    position: absolute;
-  }
-}
 
-.contest .card {
+.one-liner {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.005em;
   width: 100%;
-  height: 160px;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border: 1px solid #e0e2e7;
   border-radius: 10px;
+}
+
+#nickName {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.005em;
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 10px;
   border: 1px solid #e0e2e7;
-  margin-top: 30px;
+  border-radius: 10px;
 }
-.contest .card img {
-  width: 50px;
-  border-radius: 500px;
-  border: 1px solid #e0e2e7;
-}
-.contest .card .profile-section {
-  display: flex;
-  margin: 20px 0 30px 25px;
-}
-.contest .card .profile-section .coding-type {
+
+.stack-btn {
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 12px;
   line-height: 16px;
   letter-spacing: -0.005em;
-  color: #3aacf8;
-  width: 35px;
-  height: 20px;
-  border: 1px solid #3aacf8;
-  border-radius: 5px;
-  margin-top: 4px;
+  width: 30%;
+  height: 38px;
+  border-radius: 10px;
+  color: #8c8d96;
+  font-weight: 600;
+  background-color: #e0e2e7;
 }
-.contest .card .profile-section select {
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: -0.005em;
-  height: 20px;
-  border: 1px solid #e0e2e7;
-  border-radius: 5px;
-  margin: 4px 0 0 15px;
+.stack-btn input[type=radio] {
+  display: none;
 }
-.contest .card .profile-section .one-line-intro {
-  font-size: 14px;
-  margin: 10px 0 0 30px;
+.stack-btn label {
+  text-align: center;
+  width: 100%;
+  line-height: 38px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 200ms ease-in-out;
 }
-.contest .card .profile-name {
-  padding: 5px 10px 0 30px;
-}
-.contest .card .profile-name-div {
-  display: flex;
-}
-.contest .card .profile-button-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.contest .card .profile-button-wrapper .btn-outlined {
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  width: 110px;
-  height: 35px;
-  background-color: #abdeff;
-  color: #028ae2;
-  border: 0;
-}
-.contest .card .profile-button-wrapper .btn-outlined:hover {
+.stack-btn input[type=radio]:checked + label {
   background-color: #028ae2;
-  color: #fff;
+  color: white;
 }
-.contest .card .profile-button-wrapper .btn-primary {
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  width: 110px;
-  height: 35px;
-  margin-left: 30px;
+.stack-btn input[type=radio]:hover:not(:checked) + label {
+  background-color: #abdeff;
+  color: white;
 }
-.contest-button-wrapper {
+.stack-btn input[type=radio]:active + label {
+  background-color: #3aacf8;
+  color: white;
+}
+.stack-btn-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.introduce-content {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.005em;
+  width: 100%;
+  height: 170px;
+  padding: 15px;
+  border: 1px solid #e0e2e7;
+  border-radius: 10px;
+  resize: none;
+}
+
+.skill-group {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  height: 80px;
+  margin-bottom: 40px;
+  overflow-y: scroll;
+}
+.skill-box {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 30px;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  height: 30px;
+  margin: 0 10px 10px 0;
+  background-color: #e0e2e7;
+  color: #8c8d96;
+  font-weight: 600;
+  border-radius: 10px;
 }
-.contest-button-wrapper button {
-  font-size: 18px;
-  line-height: 28px;
-  letter-spacing: -0.02em;
-  color: #fff;
-  background-color: #8c8d96;
-  width: 120px;
-  height: 35px;
-  margin: 20px;
+.skill-box input[type=checkbox] {
+  display: none;
 }
+.skill-box label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 30px;
+  padding: 12px;
+  line-height: 30px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 200ms ease-in-out;
+}
+.skill-box input[type=checkbox]:hover + label {
+  background-color: #ffeaa7;
+  color: white;
+}
+.skill-box input[type=checkbox]:active + label {
+  background-color: #ffd963;
+  color: white;
+}
+.skill-box input[type=checkbox]:checked + label {
+  background-color: #ffcc29;
+  color: white;
+}
+
+#submit-btn {
+  width: 100px;
+}
+
+.submit-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
 @media screen and (min-width: 768px) {
-  .contest-button-wrapper button {
+  /* 배너 */
+  .banner-top {
+    margin: 0;
+  }
+  /* 네비게이션 바 */
+  .category-bar {
     font-size: 16px;
     line-height: 24px;
     letter-spacing: -0.01em;
-    width: 150px;
-    height: 40px;
-    margin: 40px;
+    padding: 15px 0;
+  }
+  /* 소제목 스타일 */
+  .introduce-title {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+  }
+  .profile-user-img {
+    width: 115px;
+    height: 115px;
+    margin: 8px;
+  }
+  .edit-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right: -5px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #f8f8f8;
+    cursor: pointer;
+  }
+  .ic-camera {
+    font-size: 20px;
+    color: #8c8d96;
   }
 }
 @media screen and (min-width: 1200px) {
-  .contest-button-wrapper button {
+  .empty-box {
+    width: 100%;
+    height: 700px;
+  }
+  .full {
+    position: relative;
+  }
+  .web-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1100px;
+    height: 715px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+  }
+  /* 네비게이션 바 */
+  .category {
+    width: 100%;
+    background-color: #fff;
+  }
+  .category-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 14px 0;
+    margin-bottom: 0;
+  }
+  .category li {
+    padding: 5px 0 5px 10px;
+    text-align: left;
+  }
+  .category-web {
+    height: 613px;
+  }
+  /* 메인과 위치 맞추기 위해 */
+  aside {
+    height: 630px;
+  }
+  .profile {
+    margin-top: 0;
+    margin-bottom: 0;
+    border-top: 1px solid #e0e2e7;
+    border-bottom: 1px solid #e0e2e7;
+  }
+  .profile-img {
+    width: 125px;
+    height: 125px;
+  }
+  .profile-img-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+    width: 155px;
+    height: 165px;
+  }
+  .profile-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 15px;
+  }
+  .profile-type {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 13px;
+    padding: 3px;
+    margin-right: 6px;
+    border: 1px solid #3aacf8;
+    border-radius: 5px;
+    font-size: 6px;
+    color: #3aacf8;
+  }
+  .profile-nick {
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    color: #3f4150;
+    font-weight: bold;
+  }
+  .profile-mypage {
+    width: 125px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    padding-bottom: 10px;
+    padding-right: 15px;
+  }
+  .profile-edit {
+    margin: 10px;
+  }
+  /* 메인과 크기 맞추기 위해 */
+  .edit-profile-wrapper {
+    width: 905px;
+    height: 695px;
+    padding: 25px 30px;
+    border: 1px solid #e0e2e7;
+    border-radius: 10px;
+  }
+  .edit-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    position: absolute;
+    top: 8px;
+    right: -8px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #f8f8f8;
+    cursor: pointer;
+  }
+  input[type=file] {
+    display: none;
+  }
+  .little-title {
+    border-bottom: 1px solid #e0e2e7;
+  }
+  .skill-group {
+    height: 210px;
+    margin: 0;
+  }
+  #nickName,
+  .stack-box,
+  .one-liner-box,
+  .skill-group-box,
+  .introduce-box {
+    width: 350px;
+  }
+  .one-liner {
+    margin-bottom: 8px;
+  }
+  .nick-stack {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .stack-btn-group {
+    margin-bottom: 8px;
+  }
+  .introduce-title {
     font-size: 16px;
     line-height: 24px;
     letter-spacing: -0.01em;
-    width: 150px;
-    height: 40px;
-    margin: 40px;
+    padding: 8px;
+    margin-left: 0;
   }
-}
-
-.modal {
-  display: none; /* 초기에 숨겨진 상태 */
-  /* 기타 스타일 속성들 */
-}
-
-.footer {
-  margin-top: 100px;
-}
-
-.downloadBtn {
-  width: 300px;
-  height: 10;
-  margin-left: 10px;
-}/*# sourceMappingURL=winnerSelect.css.map */
+  .introduce-content {
+    height: 120px;
+  }
+  .one-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .one-intro-skill {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 30px;
+  }
+}/*# sourceMappingURL=edit-profile-mem.css.map */

@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @font-face {
   font-family: "coward";
   src: url("../../assets/fonts/coward.eot");
@@ -1971,184 +1970,225 @@ i {
   }
 }
 
-.contest-top h3 {
-  padding-top: 15px;
-}
-.contest-top h2 {
-  padding-top: 20px;
-}
-.contest-top h6 {
-  padding-top: 20px;
-  color: #8c8d96;
-}
-.contest-top pre {
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  padding-top: 5px;
-  font-weight: bold;
-}
-.contest-top .status {
+.login-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 10px;
-  width: 55px;
-  height: 25px;
-  border: 1px solid #b2b3b9;
-  border-radius: 5px;
-  margin-top: 22px;
-}
-.contest-top #awards-status {
-  margin-left: -25px;
-}
-@media screen and (min-width: 768px) {
-  .contest-top .status {
-    font-size: 12px;
-    width: 70px;
-    height: 25px;
-  }
-  .contest-top #awards-status {
-    margin: 55px 0 0 285px;
-    position: absolute;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .contest-top .status {
-    font-size: 12px;
-    width: 70px;
-    height: 25px;
-  }
-  .contest-top #awards-status {
-    margin: 55px 0 0 480px;
-    position: absolute;
-  }
+  height: 100vh;
 }
 
-.contest .card {
+.logo-img {
+  width: 174.55px;
+  height: 40px;
+  margin-bottom: 15px;
+}
+
+.logo-p-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.p-email {
+  color: #000;
+}
+.p-pw {
+  color: #000;
+}
+.p-first {
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+}
+
+.login-btn {
   width: 100%;
-  height: 160px;
+  height: 45px;
   border-radius: 10px;
+  color: white;
+  background-color: #3aacf8;
+  font-weight: 700;
+  position: relative;
+  top: 30px;
+  cursor: pointer;
+}
+.login-box {
+  width: 320px;
+  height: 560px;
+}
+
+.input-email {
+  width: 100%;
+  height: 42px;
   border: 1px solid #e0e2e7;
-  margin-top: 30px;
+  border-radius: 10px;
+  padding-left: 15px;
 }
-.contest .card img {
-  width: 50px;
-  border-radius: 500px;
+.input-pw {
+  padding-left: 15px;
+  position: relative;
+  right: 11px;
+  top: 5px;
+}
+
+.pw-input-box fieldset {
   border: 1px solid #e0e2e7;
+  border-radius: 10px;
+  width: 100%;
+  height: 42px;
 }
-.contest .card .profile-section {
-  display: flex;
-  margin: 20px 0 30px 25px;
+
+.saveid-findpw-wrapper {
+  position: relative;
+  top: 20px;
 }
-.contest .card .profile-section .coding-type {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: -0.005em;
+
+.ic-eye-close {
+  color: #b2b3b9;
+  position: relative;
+  left: 80px;
+  top: 5px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.ic-eye-open {
+  color: #b2b3b9;
+  position: relative;
+  left: 80px;
+  top: 5px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.save-id-wrapper {
+  position: relative;
+  bottom: 10px;
+  left: 1px;
+}
+
+.line1 {
+  border: 0.5px solid #8c8d96;
+  width: 135px;
+}
+.line2 {
+  border: 0.5px solid #8c8d96;
+  width: 135px;
+  position: relative;
+  bottom: 2px;
+  left: 181.5px;
+}
+
+.p-or {
+  color: #b2b3b9;
+  font-size: 13px;
+  position: relative;
+  bottom: 10px;
+  left: 148px;
+}
+
+.line-box {
+  padding-top: 20px;
+  padding-bottom: 15px;
+}
+
+.email-input-box {
+  padding-top: 7px;
+}
+
+.pw-input-box {
+  padding-top: 7px;
+}
+.pw-find {
+  position: relative;
+  left: 240px;
+  bottom: 29px;
+  color: #3f4150;
+  font-size: 14px;
+}
+
+input[type=checkbox] {
+  width: 12px;
+  height: 12px;
+}
+
+.span-second {
+  font-size: 13px;
+  position: relative;
+  bottom: 5px;
+  left: 50px;
+}
+
+.save-id {
+  font-size: 14px;
+  color: #3f4150;
+}
+
+.join {
+  color: #3f4150;
+  font-size: 13px;
+  position: relative;
+  left: 50px;
+  bottom: 5px;
+}
+
+.join:hover {
   color: #3aacf8;
-  width: 35px;
-  height: 20px;
-  border: 1px solid #3aacf8;
-  border-radius: 5px;
-  margin-top: 4px;
 }
-.contest .card .profile-section select {
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: -0.005em;
-  height: 20px;
-  border: 1px solid #e0e2e7;
-  border-radius: 5px;
-  margin: 4px 0 0 15px;
+
+.naver-logo {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  z-index: 2;
+  left: 85px;
+  top: 4px;
 }
-.contest .card .profile-section .one-line-intro {
-  font-size: 14px;
-  margin: 10px 0 0 30px;
+.naver-img {
+  position: relative;
+  border: 1px solid black;
+  width: 30px;
+  height: 30px;
 }
-.contest .card .profile-name {
-  padding: 5px 10px 0 30px;
-}
-.contest .card .profile-name-div {
-  display: flex;
-}
-.contest .card .profile-button-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.contest .card .profile-button-wrapper .btn-outlined {
-  font-size: 14px;
+.naver-login {
+  font-size: 16px;
   line-height: 24px;
   letter-spacing: -0.01em;
-  width: 110px;
-  height: 35px;
-  background-color: #abdeff;
-  color: #028ae2;
-  border: 0;
-}
-.contest .card .profile-button-wrapper .btn-outlined:hover {
-  background-color: #028ae2;
   color: #fff;
-}
-.contest .card .profile-button-wrapper .btn-primary {
+  font-weight: 500;
+  width: 100%;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #2db400;
   font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  width: 110px;
-  height: 35px;
-  margin-left: 30px;
+  padding-left: 30px;
+  position: relative;
 }
-.contest-button-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 30px;
+
+.join {
+  color: #3aacf8;
 }
-.contest-button-wrapper button {
-  font-size: 18px;
-  line-height: 28px;
-  letter-spacing: -0.02em;
-  color: #fff;
-  background-color: #8c8d96;
-  width: 120px;
-  height: 35px;
-  margin: 20px;
+
+.p-pw {
+  padding-bottom: 7px;
 }
-@media screen and (min-width: 768px) {
-  .contest-button-wrapper button {
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: -0.01em;
-    width: 150px;
-    height: 40px;
-    margin: 40px;
-  }
-}
+
 @media screen and (min-width: 1200px) {
-  .contest-button-wrapper button {
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: -0.01em;
-    width: 150px;
-    height: 40px;
-    margin: 40px;
+  .login-bg-img {
+    width: 650px;
+    height: 590px;
   }
-}
-
-.modal {
-  display: none; /* 초기에 숨겨진 상태 */
-  /* 기타 스타일 속성들 */
-}
-
-.footer {
-  margin-top: 100px;
-}
-
-.downloadBtn {
-  width: 300px;
-  height: 10;
-  margin-left: 10px;
-}/*# sourceMappingURL=winnerSelect.css.map */
+  .login-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .login-box {
+    margin-right: 70px;
+    margin-bottom: 15px;
+    display: inline-block;
+    width: 320px;
+    height: 560px;
+  }
+}/*# sourceMappingURL=login.css.map */

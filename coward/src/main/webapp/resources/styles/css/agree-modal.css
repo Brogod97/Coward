@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @font-face {
   font-family: "coward";
   src: url("../../assets/fonts/coward.eot");
@@ -1971,184 +1970,150 @@ i {
   }
 }
 
-.contest-top h3 {
-  padding-top: 15px;
-}
-.contest-top h2 {
-  padding-top: 20px;
-}
-.contest-top h6 {
-  padding-top: 20px;
-  color: #8c8d96;
-}
-.contest-top pre {
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  padding-top: 5px;
-  font-weight: bold;
-}
-.contest-top .status {
+.agree-all-wrapper {
   display: flex;
-  align-items: center;
   justify-content: center;
-  font-size: 10px;
-  width: 55px;
-  height: 25px;
-  border: 1px solid #b2b3b9;
-  border-radius: 5px;
-  margin-top: 22px;
-}
-.contest-top #awards-status {
-  margin-left: -25px;
-}
-@media screen and (min-width: 768px) {
-  .contest-top .status {
-    font-size: 12px;
-    width: 70px;
-    height: 25px;
-  }
-  .contest-top #awards-status {
-    margin: 55px 0 0 285px;
-    position: absolute;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .contest-top .status {
-    font-size: 12px;
-    width: 70px;
-    height: 25px;
-  }
-  .contest-top #awards-status {
-    margin: 55px 0 0 480px;
-    position: absolute;
-  }
 }
 
-.contest .card {
-  width: 100%;
-  height: 160px;
+.agree-box1 {
+  width: 290px;
+  height: 420px;
   border-radius: 10px;
-  border: 1px solid #e0e2e7;
-  margin-top: 30px;
+  background-color: #fff;
+  z-index: 200;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 50%;
 }
-.contest .card img {
-  width: 50px;
-  border-radius: 500px;
-  border: 1px solid #e0e2e7;
+
+.agree-box2 {
+  width: 290px;
+  height: 420px;
+  border-radius: 10px;
+  background-color: #fff;
+  z-index: 200;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 50%;
 }
-.contest .card .profile-section {
-  display: flex;
-  margin: 20px 0 30px 25px;
+
+.agree-box3 {
+  width: 290px;
+  height: 420px;
+  border-radius: 10px;
+  background-color: #fff;
+  z-index: 200;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 50%;
 }
-.contest .card .profile-section .coding-type {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: -0.005em;
-  color: #3aacf8;
-  width: 35px;
-  height: 20px;
-  border: 1px solid #3aacf8;
+
+.agree-btn1 {
+  width: 106px;
+  height: 36px;
+  border: none;
   border-radius: 5px;
-  margin-top: 4px;
+  font-size: medium;
+  background-color: #3aacf8;
+  color: #fff;
+  font-weight: 700;
+  position: relative;
+  left: 91px;
+  right: 91px;
+  bottom: 1px;
 }
-.contest .card .profile-section select {
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: -0.005em;
-  height: 20px;
-  border: 1px solid #e0e2e7;
+
+.agree-btn2 {
+  width: 106px;
+  height: 36px;
+  border: none;
   border-radius: 5px;
-  margin: 4px 0 0 15px;
-}
-.contest .card .profile-section .one-line-intro {
-  font-size: 14px;
-  margin: 10px 0 0 30px;
-}
-.contest .card .profile-name {
-  padding: 5px 10px 0 30px;
-}
-.contest .card .profile-name-div {
-  display: flex;
-}
-.contest .card .profile-button-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.contest .card .profile-button-wrapper .btn-outlined {
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  width: 110px;
-  height: 35px;
-  background-color: #abdeff;
-  color: #028ae2;
-  border: 0;
-}
-.contest .card .profile-button-wrapper .btn-outlined:hover {
-  background-color: #028ae2;
+  font-size: medium;
+  background-color: #3aacf8;
   color: #fff;
+  font-weight: 700;
+  position: relative;
+  left: 91px;
+  right: 91px;
+  bottom: 1px;
 }
-.contest .card .profile-button-wrapper .btn-primary {
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  width: 110px;
-  height: 35px;
-  margin-left: 30px;
-}
-.contest-button-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 30px;
-}
-.contest-button-wrapper button {
-  font-size: 18px;
-  line-height: 28px;
-  letter-spacing: -0.02em;
+
+.agree-btn3 {
+  width: 106px;
+  height: 36px;
+  border: none;
+  border-radius: 5px;
+  font-size: medium;
+  background-color: #3aacf8;
   color: #fff;
+  font-weight: 700;
+  position: relative;
+  left: 91px;
+  right: 91px;
+  bottom: 1px;
+}
+
+.agree-content-box {
+  overflow-x: hidden;
+  overflow-x: hidden;
+  width: 90%;
+  height: 60%;
+  border: 1px solid none;
+  font-size: 14pt;
+}
+.agree-content-box::-webkit-scrollbar {
+  width: 6px;
+}
+.agree-content-box::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.agree-content-box::-webkit-scrollbar-thumb {
   background-color: #8c8d96;
-  width: 120px;
-  height: 35px;
-  margin: 20px;
-}
-@media screen and (min-width: 768px) {
-  .contest-button-wrapper button {
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: -0.01em;
-    width: 150px;
-    height: 40px;
-    margin: 40px;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .contest-button-wrapper button {
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: -0.01em;
-    width: 150px;
-    height: 40px;
-    margin: 40px;
-  }
+  border-radius: 30px;
 }
 
-.modal {
-  display: none; /* 초기에 숨겨진 상태 */
-  /* 기타 스타일 속성들 */
+strong {
+  font-size: 10pt;
 }
 
-.footer {
-  margin-top: 100px;
+.yellow {
+  border-bottom: 4px solid #ffc200;
+  padding-bottom: 3px;
 }
 
-.downloadBtn {
-  width: 300px;
-  height: 10;
-  margin-left: 10px;
-}/*# sourceMappingURL=winnerSelect.css.map */
+.close1 {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  left: 265px;
+  bottom: 27px;
+  color: #e0e2e7;
+  cursor: pointer;
+}
+
+.close2 {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  left: 265px;
+  bottom: 27px;
+  color: #e0e2e7;
+  cursor: pointer;
+}
+
+.close3 {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  left: 265px;
+  bottom: 27px;
+  color: #e0e2e7;
+  cursor: pointer;
+}
+
+.agree-content {
+  font-size: 8pt;
+}/*# sourceMappingURL=agree-modal.css.map */

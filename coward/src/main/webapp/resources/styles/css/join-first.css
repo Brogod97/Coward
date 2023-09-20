@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @font-face {
   font-family: "coward";
   src: url("../../assets/fonts/coward.eot");
@@ -1971,184 +1970,155 @@ i {
   }
 }
 
-.contest-top h3 {
-  padding-top: 15px;
-}
-.contest-top h2 {
-  padding-top: 20px;
-}
-.contest-top h6 {
-  padding-top: 20px;
-  color: #8c8d96;
-}
-.contest-top pre {
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  padding-top: 5px;
-  font-weight: bold;
-}
-.contest-top .status {
+.join-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 10px;
-  width: 55px;
-  height: 25px;
-  border: 1px solid #b2b3b9;
-  border-radius: 5px;
-  margin-top: 22px;
-}
-.contest-top #awards-status {
-  margin-left: -25px;
-}
-@media screen and (min-width: 768px) {
-  .contest-top .status {
-    font-size: 12px;
-    width: 70px;
-    height: 25px;
-  }
-  .contest-top #awards-status {
-    margin: 55px 0 0 285px;
-    position: absolute;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .contest-top .status {
-    font-size: 12px;
-    width: 70px;
-    height: 25px;
-  }
-  .contest-top #awards-status {
-    margin: 55px 0 0 480px;
-    position: absolute;
-  }
+  height: 100vh;
 }
 
-.contest .card {
+.logo-img {
+  width: 174.55px;
+  height: 40px;
+  margin-bottom: 15px;
+}
+
+.logo-p-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.line1 {
+  border: 0.5px solid #8c8d96;
+  width: 135px;
+}
+.line2 {
+  border: 0.5px solid #8c8d96;
+  width: 135px;
+  position: relative;
+  bottom: 2px;
+  left: 181.5px;
+}
+
+.p-or {
+  color: #b2b3b9;
+  font-size: 13px;
+  position: relative;
+  bottom: 10px;
+  left: 148px;
+}
+.p-first {
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  color: #000;
+  padding-bottom: 70px;
+}
+
+.line-box {
+  padding-top: 60px;
+}
+
+.join-first-box {
+  width: 320px;
+  height: 560px;
+}
+.join-email {
   width: 100%;
-  height: 160px;
+  height: 50px;
+  border: 1px solid #e0e2e7;
   border-radius: 10px;
+  font-weight: 600;
+}
+.join-google {
+  width: 100%;
+  height: 50px;
   border: 1px solid #e0e2e7;
-  margin-top: 30px;
+  border-radius: 10px;
+  padding-left: 80px;
 }
-.contest .card img {
-  width: 50px;
-  border-radius: 500px;
-  border: 1px solid #e0e2e7;
+.join-kakao {
+  width: 100%;
+  height: 50px;
+  border-radius: 10px;
+  background-color: #fee500;
+  padding-left: 80px;
 }
-.contest .card .profile-section {
-  display: flex;
-  margin: 20px 0 30px 25px;
+.join-google-box {
+  padding-bottom: 20px;
 }
-.contest .card .profile-section .coding-type {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: -0.005em;
+.join-kakao-box {
+  padding-top: 15px;
+  padding-bottom: 35px;
+}
+
+.naver-login {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  color: #fff;
+  width: 100%;
+  height: 50px;
+  font-weight: 500;
+  border-radius: 10px;
+  background-color: #2db400;
+  font-size: 14px;
+  position: relative;
+  top: 30px;
+}
+
+.google-logo {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  top: 45px;
+  left: 65px;
+}
+
+.kakao-logo {
+  width: 40px;
+  height: 30px;
+  position: relative;
+  top: 130px;
+  left: 25px;
+}
+
+.question {
+  font-size: 13px;
+  position: relative;
+  left: 60px;
+  top: 50px;
+}
+
+.login {
+  color: #3f4150;
+  font-size: 13px;
+  position: relative;
+  left: 65px;
+  top: 50px;
+}
+
+.login:hover {
   color: #3aacf8;
-  width: 35px;
-  height: 20px;
-  border: 1px solid #3aacf8;
-  border-radius: 5px;
-  margin-top: 4px;
 }
-.contest .card .profile-section select {
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: -0.005em;
-  height: 20px;
-  border: 1px solid #e0e2e7;
-  border-radius: 5px;
-  margin: 4px 0 0 15px;
-}
-.contest .card .profile-section .one-line-intro {
-  font-size: 14px;
-  margin: 10px 0 0 30px;
-}
-.contest .card .profile-name {
-  padding: 5px 10px 0 30px;
-}
-.contest .card .profile-name-div {
-  display: flex;
-}
-.contest .card .profile-button-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.contest .card .profile-button-wrapper .btn-outlined {
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  width: 110px;
-  height: 35px;
-  background-color: #abdeff;
-  color: #028ae2;
-  border: 0;
-}
-.contest .card .profile-button-wrapper .btn-outlined:hover {
-  background-color: #028ae2;
-  color: #fff;
-}
-.contest .card .profile-button-wrapper .btn-primary {
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  width: 110px;
-  height: 35px;
-  margin-left: 30px;
-}
-.contest-button-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 30px;
-}
-.contest-button-wrapper button {
-  font-size: 18px;
-  line-height: 28px;
-  letter-spacing: -0.02em;
-  color: #fff;
-  background-color: #8c8d96;
-  width: 120px;
-  height: 35px;
-  margin: 20px;
-}
-@media screen and (min-width: 768px) {
-  .contest-button-wrapper button {
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: -0.01em;
-    width: 150px;
-    height: 40px;
-    margin: 40px;
-  }
-}
+
 @media screen and (min-width: 1200px) {
-  .contest-button-wrapper button {
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: -0.01em;
-    width: 150px;
-    height: 40px;
-    margin: 40px;
+  .login-bg-img {
+    width: 650px;
+    height: 590px;
   }
-}
-
-.modal {
-  display: none; /* 초기에 숨겨진 상태 */
-  /* 기타 스타일 속성들 */
-}
-
-.footer {
-  margin-top: 100px;
-}
-
-.downloadBtn {
-  width: 300px;
-  height: 10;
-  margin-left: 10px;
-}/*# sourceMappingURL=winnerSelect.css.map */
+  .join-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .join-first-box {
+    margin-right: 70px;
+    margin-bottom: 15px;
+    display: inline-block;
+    width: 320px;
+    height: 560px;
+  }
+}/*# sourceMappingURL=join-first.css.map */

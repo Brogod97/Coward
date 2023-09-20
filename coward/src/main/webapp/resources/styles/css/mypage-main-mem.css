@@ -1971,184 +1971,449 @@ i {
   }
 }
 
-.contest-top h3 {
-  padding-top: 15px;
+/***** 모바일 *****/
+/* 네비게이션 바 */
+.category {
+  width: 100%;
+  background-color: #f8f8f8;
+  margin-bottom: 50px;
 }
-.contest-top h2 {
-  padding-top: 20px;
-}
-.contest-top h6 {
-  padding-top: 20px;
-  color: #8c8d96;
-}
-.contest-top pre {
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  padding-top: 5px;
-  font-weight: bold;
-}
-.contest-top .status {
+.category-bar {
   display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: 10px;
-  width: 55px;
-  height: 25px;
-  border: 1px solid #b2b3b9;
-  border-radius: 5px;
-  margin-top: 22px;
-}
-.contest-top #awards-status {
-  margin-left: -25px;
-}
-@media screen and (min-width: 768px) {
-  .contest-top .status {
-    font-size: 12px;
-    width: 70px;
-    height: 25px;
-  }
-  .contest-top #awards-status {
-    margin: 55px 0 0 285px;
-    position: absolute;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .contest-top .status {
-    font-size: 12px;
-    width: 70px;
-    height: 25px;
-  }
-  .contest-top #awards-status {
-    margin: 55px 0 0 480px;
-    position: absolute;
-  }
+  justify-content: space-around;
+  font-size: 12px;
+  padding: 14px 0;
+  text-align: center;
 }
 
-.contest .card {
-  width: 100%;
-  height: 160px;
-  border-radius: 10px;
-  border: 1px solid #e0e2e7;
-  margin-top: 30px;
-}
-.contest .card img {
-  width: 50px;
-  border-radius: 500px;
-  border: 1px solid #e0e2e7;
-}
-.contest .card .profile-section {
+/******** 여기까지 마이페이지 공통 코드 ********/
+/* 프로필 사진 + 백 + 닉네임 */
+.profile {
   display: flex;
-  margin: 20px 0 30px 25px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* 타입과 이름 가로 배치 */
 }
-.contest .card .profile-section .coding-type {
+.profile-img {
+  width: 85px;
+  height: 85px;
+  margin: 8px;
+}
+.profile-info {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: -0.005em;
-  color: #3aacf8;
-  width: 35px;
-  height: 20px;
+}
+.profile-type {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 13px;
+  padding: 3px;
+  margin-right: 6px;
   border: 1px solid #3aacf8;
   border-radius: 5px;
-  margin-top: 4px;
+  font-size: 6px;
+  color: #3aacf8;
 }
-.contest .card .profile-section select {
+.profile-nick {
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  color: #3f4150;
+  font-weight: bold;
+}
+
+/* 소제목 스타일 */
+.introduce-title {
   font-size: 12px;
   line-height: 16px;
   letter-spacing: -0.005em;
-  height: 20px;
+  margin: 0 8px 8px;
+  font-weight: 700;
+}
+
+/* 자기 소개 */
+.one-liner {
+  margin-bottom: 16px;
+}
+.one-liner textarea {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.005em;
+  width: 100%;
+  height: 190px;
+  padding: 14px 20px;
+  border-radius: 10px;
+  background-color: #fff;
   border: 1px solid #e0e2e7;
-  border-radius: 5px;
-  margin: 4px 0 0 15px;
+  resize: none;
 }
-.contest .card .profile-section .one-line-intro {
-  font-size: 14px;
-  margin: 10px 0 0 30px;
-}
-.contest .card .profile-name {
-  padding: 5px 10px 0 30px;
-}
-.contest .card .profile-name-div {
-  display: flex;
-}
-.contest .card .profile-button-wrapper {
+
+/* 수상 이력 */
+.award-box {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  border: 1px solid #e0e2e7;
+  border-radius: 10px;
+  margin-bottom: 16px;
 }
-.contest .card .profile-button-wrapper .btn-outlined {
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  width: 110px;
-  height: 35px;
-  background-color: #abdeff;
-  color: #028ae2;
-  border: 0;
+.award-table {
+  table-layout: auto;
+  table-layout: fixed;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
 }
-.contest .card .profile-button-wrapper .btn-outlined:hover {
-  background-color: #028ae2;
-  color: #fff;
+.award-table td {
+  padding: 5px;
 }
-.contest .card .profile-button-wrapper .btn-primary {
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  width: 110px;
-  height: 35px;
-  margin-left: 30px;
+.award-table tr:first-child {
+  font-weight: 700;
 }
-.contest-button-wrapper {
+.award-table tr:last-child {
+  font-size: 10px;
+}
+
+/* 내 기술 */
+/* 스크롤 줘야 할 거 같은데 가로? 세로? */
+.skill-box {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 30px;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 16px;
+  margin-bottom: 16px;
+  border: 1px solid #e0e2e7;
+  border-radius: 10px;
 }
-.contest-button-wrapper button {
-  font-size: 18px;
-  line-height: 28px;
-  letter-spacing: -0.02em;
-  color: #fff;
-  background-color: #8c8d96;
-  width: 120px;
-  height: 35px;
-  margin: 20px;
+
+/* 3의 배수로 light-blue 쓰자는 의견 */
+.my-skill {
+  display: inline-block;
+  width: auto;
+  height: auto;
+  padding: 8px 8px;
+  margin: 4px 4px;
+  background-color: #3aacf8;
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: white;
+  text-align: center;
 }
+
+/* 관심 목록 */
+/* 반응형 시 가로배치 위해*/
+.watchlist-box-group {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+/***** 태블릿 *****/
 @media screen and (min-width: 768px) {
-  .contest-button-wrapper button {
+  /* 마이페이지의 경우 nav바랑 떨어져서 margin 없애줌 */
+  .category {
+    margin-top: -50px;
+  }
+  /* 네비게이션 바 */
+  .category-bar {
     font-size: 16px;
     line-height: 24px;
     letter-spacing: -0.01em;
-    width: 150px;
-    height: 40px;
-    margin: 40px;
+    padding: 15px 0;
+  }
+  /* 프로필 사진 + 백 + 닉네임 */
+  .profile {
+    margin-bottom: 30px;
+  }
+  .profile-img {
+    width: 130px;
+    height: 130px;
+    margin: 30px 0 10px;
+  }
+  /* 소제목 스타일 */
+  .introduce-title {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    margin: 0 5px 12px;
+  }
+  /* 한줄 소개 */
+  .one-liner textarea {
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    width: 100%;
+    height: 180px;
+  }
+  .award-box {
+    justify-content: space-around;
+    align-items: center;
+  }
+  .award-table {
+    table-layout: auto;
+    table-layout: fixed;
+    width: 70%;
+    height: 80%;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  .award-table tr:first-child {
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: -0.02em;
+    font-weight: 600;
+  }
+  .award-table tr:last-child {
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: -0.005em;
+  }
+  /* 당선률 프로그래스 바 들어갈 공간 */
+  /* JS할 때 같이 진행 */
+  .progress {
+    position: relative;
+    width: 135px;
+    height: 135px;
+    border-radius: 50%;
+    margin: 15px 0 15px 65px;
+    background: #3aacf8;
   }
 }
+/***** 웹 *****/
 @media screen and (min-width: 1200px) {
-  .contest-button-wrapper button {
-    font-size: 16px;
+  /* 헤더와 푸터 사이의 거리*/
+  .empty-box {
+    width: 100%;
+    height: 700px;
+  }
+  .category {
+    margin-top: 0;
+  }
+  .category-bar a:hover {
+    border-bottom: 1.5px solid #028ae2;
+    font-weight: 600;
+  }
+  /* body에 relative 줄 경우 배치가 이상해져서 div 하나 생성 */
+  .full {
+    position: relative;
+  }
+  /* 페이지 전환 시 자연스럽기 위해 크기 고정*/
+  .web-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1100px;
+    height: 715px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  .category {
+    width: 100%;
+    background-color: #fff;
+    /* 높이 안주면 가운데 배치 됨 */
+  }
+  .category-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 14px 0;
+    margin-bottom: 0;
+  }
+  .category li {
+    padding: 5px 0 5px 0;
+    text-align: left;
+  }
+  .category-web {
+    height: 603px;
+  }
+  .profile {
+    margin-top: 0;
+    margin-bottom: 0;
+    border-top: 1px solid #e0e2e7;
+    border-bottom: 1px solid #e0e2e7;
+  }
+  .profile-wrapper {
+    padding: 25px 25px 15px;
+    width: 905px;
+    height: 695px;
+    border: 1px solid #e0e2e7;
+    border-radius: 10px;
+  }
+  .profile-img {
+    width: 125px;
+    height: 125px;
+  }
+  .profile-img-box {
+    padding: 0 15px 0 15px;
+  }
+  .profile-info {
+    padding-bottom: 15px;
+  }
+  .profile-mypage {
+    width: 125px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    padding-bottom: 10px;
+    padding-right: 15px;
+  }
+  .introduce-title {
+    margin-left: 0;
+    margin-bottom: 12px;
+  }
+  /* 한줄 소개 */
+  .one-liner {
+    width: 840px;
+    margin-bottom: 10px;
+  }
+  .one-liner textarea {
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: -0.005em;
+    width: 840px;
+    height: 120px;
+    background-color: white;
+    resize: none;
+  }
+  /* 어워드 */
+  .award-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 287px;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0;
+    width: 250px;
+    height: 100px;
+  }
+  .progress {
+    margin: 30px 0 10px 0;
+    background-color: #3aacf8;
+  }
+  .credit {
+    width: 250px;
+  }
+  .credit-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #e0e2e7;
+    border-radius: 10px;
+  }
+  .credit-c {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 17px;
+    background-color: #abdeff;
+    border-radius: 10px;
+    margin-right: 8px;
+    font-size: 10px;
+    font-weight: 700;
+    color: white;
+  }
+  .credit-amount {
+    font-size: 20px;
+    font-weight: 600;
+  }
+  /* 내 기술 */
+  .skill {
+    width: 250px;
+  }
+  .skill-box {
+    height: 100px;
+    padding: 10px;
+    margin: 0;
+  }
+  .watchlist {
+    overflow: hidden;
+  }
+  .watchlist p {
+    margin: 0 0 5px 15px;
+  }
+  .slider-controls {
+    width: calc(98% + 35px);
+  }
+  .slider-controls .control-button {
+    width: 40px;
+    border-radius: 50%;
+  }
+  /* 코워드 크레딧과 나의 기술 가로 정렬 위해 */
+  .credit-skill {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 850px;
+  }
+  /* 소개와 creadit-skill 세로 정렬 위해 */
+  .one-credit-skill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 850px;
+    margin-right: 12px;
+  }
+  /* 어워드와 one-credit-skill 가로 정렬 위해 */
+  .web-box-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  .contest-card {
+    cursor: pointer;
+    margin-bottom: 0;
+  }
+  .contest-slider {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 280px;
+    position: relative;
+  }
+  .slider-wrapper {
+    height: 280px;
+  }
+  .tns-visually-hidden {
+    position: absolute;
+    left: -10000em;
+  }
+  aside {
+    height: 630px;
+  }
+  .category-web {
+    height: 613px;
+    margin: 0;
+  }
+  .won {
+    font-size: 14px;
     line-height: 24px;
     letter-spacing: -0.01em;
-    width: 150px;
-    height: 40px;
-    margin: 40px;
   }
-}
-
-.modal {
-  display: none; /* 초기에 숨겨진 상태 */
-  /* 기타 스타일 속성들 */
-}
-
-.footer {
-  margin-top: 100px;
-}
-
-.downloadBtn {
-  width: 300px;
-  height: 10;
-  margin-left: 10px;
-}/*# sourceMappingURL=winnerSelect.css.map */
+}/*# sourceMappingURL=mypage-main-mem.css.map */

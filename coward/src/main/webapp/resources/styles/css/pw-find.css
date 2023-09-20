@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @font-face {
   font-family: "coward";
   src: url("../../assets/fonts/coward.eot");
@@ -1971,184 +1970,204 @@ i {
   }
 }
 
-.contest-top h3 {
-  padding-top: 15px;
+.join-final-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
-.contest-top h2 {
-  padding-top: 20px;
+.join-final-box {
+  width: 320px;
+  height: 560px;
 }
-.contest-top h6 {
-  padding-top: 20px;
+
+.logo-img {
+  width: 174.55px;
+  height: 40px;
+  margin-bottom: 15px;
+}
+.logo-final-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 25px;
+}
+
+.final-info {
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+}
+
+.btn-input-bundle {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.005em;
+  width: 100%;
+  height: 42px;
+  border: 1px solid #e0e2e7;
+  border-radius: 10px;
+  padding-left: 10px;
+}
+
+.input-title {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+.email-cert-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 120px;
+  border: 1px solid #3aacf8;
+  border-radius: 10px;
+  display: none;
+}
+.email-cert-btn {
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.email-explanation {
+  font-size: 13px;
+  line-height: 20px;
+  letter-spacing: -0.01em;
   color: #8c8d96;
 }
-.contest-top pre {
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  padding-top: 5px;
-  font-weight: bold;
+.email-explanation-1 {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.005em;
+  color: #8c8d96;
+  margin-left: 5px;
+  margin-right: 5px;
 }
-.contest-top .status {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 10px;
-  width: 55px;
-  height: 25px;
-  border: 1px solid #b2b3b9;
-  border-radius: 5px;
-  margin-top: 22px;
-}
-.contest-top #awards-status {
-  margin-left: -25px;
-}
-@media screen and (min-width: 768px) {
-  .contest-top .status {
-    font-size: 12px;
-    width: 70px;
-    height: 25px;
-  }
-  .contest-top #awards-status {
-    margin: 55px 0 0 285px;
-    position: absolute;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .contest-top .status {
-    font-size: 12px;
-    width: 70px;
-    height: 25px;
-  }
-  .contest-top #awards-status {
-    margin: 55px 0 0 480px;
-    position: absolute;
-  }
+.email-explanation-2 {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.005em;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
-.contest .card {
-  width: 100%;
-  height: 160px;
-  border-radius: 10px;
-  border: 1px solid #e0e2e7;
-  margin-top: 30px;
+.cert-input {
+  font-size: 13px;
+  line-height: 20px;
+  letter-spacing: -0.01em;
+  color: #b2b3b9;
 }
-.contest .card img {
+.cert-btn {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.005em;
+  color: #fff;
+  font-weight: 500;
   width: 50px;
-  border-radius: 500px;
-  border: 1px solid #e0e2e7;
+  height: 30px;
+  border-radius: 10px;
+  background-color: #b2b3b9;
 }
-.contest .card .profile-section {
-  display: flex;
-  margin: 20px 0 30px 25px;
+.cert-code {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 30px;
+  border-radius: 10px;
+  background-color: #f8f8f8;
+  margin-right: 5px;
+  margin-top: 7px;
+  margin-bottom: 7px;
 }
-.contest .card .profile-section .coding-type {
+
+.timer {
+  font-size: 13px;
+  line-height: 20px;
+  letter-spacing: -0.01em;
+  color: #ffc1c9;
+  font-weight: 900;
+  padding-left: 10px;
+}
+
+.warn-image-container {
+  width: 12px;
+  height: 12px;
+}
+.warn-image {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+  width: 12px;
+  height: 12px;
+}
+.warn-box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pw-explanation {
   font-size: 12px;
   line-height: 16px;
   letter-spacing: -0.005em;
-  color: #3aacf8;
-  width: 35px;
-  height: 20px;
-  border: 1px solid #3aacf8;
-  border-radius: 5px;
-  margin-top: 4px;
+  color: #8c8d96;
+  margin-left: 5px;
 }
-.contest .card .profile-section select {
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: -0.005em;
-  height: 20px;
-  border: 1px solid #e0e2e7;
-  border-radius: 5px;
-  margin: 4px 0 0 15px;
-}
-.contest .card .profile-section .one-line-intro {
-  font-size: 14px;
-  margin: 10px 0 0 30px;
-}
-.contest .card .profile-name {
-  padding: 5px 10px 0 30px;
-}
-.contest .card .profile-name-div {
-  display: flex;
-}
-.contest .card .profile-button-wrapper {
-  display: flex;
+.pw-input-box {
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
-.contest .card .profile-button-wrapper .btn-outlined {
-  font-size: 14px;
+.pw-input {
+  width: 100%;
+}
+.pw-input-chk {
+  width: 100%;
+}
+
+.eye-img {
+  padding-right: 10px;
+  cursor: pointer;
+}
+
+.complete-btn {
+  font-size: 16px;
   line-height: 24px;
   letter-spacing: -0.01em;
-  width: 110px;
-  height: 35px;
-  background-color: #abdeff;
-  color: #028ae2;
-  border: 0;
-}
-.contest .card .profile-button-wrapper .btn-outlined:hover {
-  background-color: #028ae2;
   color: #fff;
+  width: 100%;
+  height: 48px;
+  background-color: #b2b3b9;
+  font-weight: 700;
+  border-radius: 10px;
+  margin-top: 20px;
 }
-.contest .card .profile-button-wrapper .btn-primary {
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  width: 110px;
-  height: 35px;
-  margin-left: 30px;
-}
-.contest-button-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 30px;
-}
-.contest-button-wrapper button {
-  font-size: 18px;
-  line-height: 28px;
-  letter-spacing: -0.02em;
-  color: #fff;
-  background-color: #8c8d96;
-  width: 120px;
-  height: 35px;
-  margin: 20px;
-}
-@media screen and (min-width: 768px) {
-  .contest-button-wrapper button {
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: -0.01em;
-    width: 150px;
-    height: 40px;
-    margin: 40px;
-  }
-}
+
 @media screen and (min-width: 1200px) {
-  .contest-button-wrapper button {
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: -0.01em;
-    width: 150px;
-    height: 40px;
-    margin: 40px;
+  .login-bg-img {
+    width: 650px;
+    height: 590px;
   }
-}
-
-.modal {
-  display: none; /* 초기에 숨겨진 상태 */
-  /* 기타 스타일 속성들 */
-}
-
-.footer {
-  margin-top: 100px;
-}
-
-.downloadBtn {
-  width: 300px;
-  height: 10;
-  margin-left: 10px;
-}/*# sourceMappingURL=winnerSelect.css.map */
+  .join-final-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .join-final-box {
+    margin-right: 70px;
+    margin-bottom: 15px;
+    display: inline-block;
+    width: 320px;
+    height: 560px;
+  }
+}/*# sourceMappingURL=pw-find.css.map */

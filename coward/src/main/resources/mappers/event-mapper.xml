@@ -14,20 +14,23 @@
 		<result property="statusFl"  column="STATUS_FL"/>
 	</resultMap>
 	
-	<select id="getEventsByPage" resultMap="event_rm">
-		SELECT EVENT_NO, EVENT_TITLE, EVENT_THUMBNAIL, EVENT_CONTENT, BANNER_IMG, AD_IMG
-		,TO_CHAR(CREATE_DATE, 'YYYY/MM/DD') AS CREATE_DATE, TO_CHAR(END_DATE, 'YYYY/MM/DD') AS END_DATE, STATUS_FL
-		FROM EVENT
-		OFFSET ${offset} ROWS FETCH NEXT ${pageSize} ROWS ONLY
-	</select>
+	<!-- Oracle에서 MySQL로 변환된 SQL 쿼리 -->
 
-	
-	
-	<select id="getEvent" parameterType="_int" resultMap="event_rm">
-		SELECT EVENT_NO, EVENT_TITLE, EVENT_THUMBNAIL, EVENT_CONTENT, BANNER_IMG, AD_IMG, 
-				TO_CHAR(CREATE_DATE, 'YYYY/MM/DD') AS CREATE_DATE, TO_CHAR(END_DATE, 'YYYY/MM/DD') AS END_DATE, STATUS_FL 
-		FROM EVENT
-		WHERE EVENT_NO = #{eventNo}
+	<!-- 이벤트 페이지별 조회 -->
+	<select id="getEventsByPage" resultMap="event_rm">
+	    SELECT EVENT_NO, EVENT_TITLE, EVENT_THUMBNAIL, EVENT_CONTENT, BANNER_IMG, AD_IMG,
+	    DATE_FORMAT(CREATE_DATE, '%Y/%m/%d') AS CREATE_DATE, DATE_FORMAT(END_DATE, '%Y/%m/%d') AS END_DATE, STATUS_FL
+	    FROM EVENT
+	    LIMIT ${offset}, ${pageSize}
 	</select>
+	
+	<!-- 이벤트 상세 조회 -->
+	<select id="getEvent" parameterType="_int" resultMap="event_rm">
+	    SELECT EVENT_NO, EVENT_TITLE, EVENT_THUMBNAIL, EVENT_CONTENT, BANNER_IMG, AD_IMG,
+	    DATE_FORMAT(CREATE_DATE, '%Y/%m/%d') AS CREATE_DATE, DATE_FORMAT(END_DATE, '%Y/%m/%d') AS END_DATE, STATUS_FL
+	    FROM EVENT
+	    WHERE EVENT_NO = #{eventNo}
+	</select>
+	
 
 </mapper>

@@ -1,3 +1,5 @@
+/*
+
 // URL 복사
 const clip = async () => {
   try {
@@ -13,6 +15,8 @@ const clip = async () => {
     alert("주소복사 실패");
   }
 };
+
+*/
 
 let clicked = false;
 // 북마크 COUNT

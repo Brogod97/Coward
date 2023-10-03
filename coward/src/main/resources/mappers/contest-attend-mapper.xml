@@ -3,26 +3,24 @@
 <mapper namespace="contestAttendMapper">
 
 	<resultMap type="contestAttend" id="contestAttend_rm">
-		<id property="attendNo" 		column="ATTEND_NO"/>
-		<result property="memberNo" 		column="MEMBER_NO"/>
-		<result property="contestNo" 	column="CONTEST_NO"/>
-		<result property="description" 	column="DESCRIPTION"/>
-		<result property="githubAddress" 	column="GITHUB"/>
-		<result property="pptFile"  column="PPT_FILE"/>
-		<result property="skill"  column="SKILL"/>
+		<id property="attendNo" column="ATTEND_NO"/>
+		<result property="memberNo" column="MEMBER_NO"/>
+		<result property="contestNo" column="CONTEST_NO"/>
+		<result property="description" column="DESCRIPTION"/>
+		<result property="githubAddress" column="GITHUB"/>
+		<result property="pptFile" column="PPT_FILE"/>
+		<result property="skill" column="SKILL"/>
 	</resultMap>
 
-
 	<insert id="contestAttend">
-		INSERT INTO CONTEST_ATTEND (ATTEND_NO ,MEMBER_NO ,CONTEST_NO ,DESCRIPTION ,GITHUB ,PPT_FILE, SKILL)
-		VALUES(SEQ_ATTEND_NO.NEXTVAL, #{memberNo} , #{contestNo} , #{description}, #{githubAddress} , #{pptFile}, #{skill})
+		INSERT INTO CONTEST_ATTEND (MEMBER_NO, CONTEST_NO, DESCRIPTION, GITHUB, PPT_FILE, SKILL)
+		VALUES (#{memberNo}, #{contestNo}, #{description}, #{githubAddress}, #{pptFile}, #{skill})
 	</insert>
-
 
 	<select id="contestAttendCheck" resultType="_int">
 		SELECT COUNT(*)
 		FROM CONTEST_ATTEND
-		WHERE MEMBER_NO = ${memberNo}
-		AND CONTEST_NO = ${contestNo}
+		WHERE MEMBER_NO = #{memberNo}
+		AND CONTEST_NO = #{contestNo}
 	</select>
 </mapper>

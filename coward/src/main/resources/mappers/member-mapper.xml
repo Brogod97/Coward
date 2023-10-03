@@ -1,177 +1,166 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="memberMapper">
-  <resultMap type="member" id="member_rm">
-		<id property="memberNo" 		column="MEMBER_NO"/>
-		<result property="memberType" 		column="MEMBER_TYPE"/>
-		<result property="memberId" 	column="MEMBER_ID"/>
-		<result property="memberPw" 		column="MEMBER_PW"/>
-		<result property="memberNick" 	column="MEMBER_NICK"/>
-		<result property="profileImg" 	column="PROFILE_IMG"/>
-		<result property="phone" 		column="PHONE"/>
-		<result property="regionNo" 	column="REGION_NO"/>
-		<result property="stack" 	column="STACK"/>
-		<result property="skill"    column="SKILL"/>
-		<result property="slogan" 	column="SLOGAN"/>
-		<result property="introduce" 	column="INTRODUCE"/>
-		<result property="totalPrice" 	column="TOTAL_PRICE"/>
-		<result property="currPrice" 	column="CURR_PRICE"/>
-		<result property="enrollDate" 	column="ENROLL_DATE"/>
-		<result property="secessionFlag" 	column="SECESSION_FL"/>
-		<result property="termsFlag" 	column="TERMS_FL"/>
-		<result property="snsFlag" 	column="SNS_FL"/>
-		<result property="likeCount" 	column="LIKE_COUNT"/>
-		<result property="victoryCount" 	column="VICTORY_COUNT"/>
-		<result property="attendCount"  column="ATTEND_COUNT"/>
-	 </resultMap>
+    <resultMap type="member" id="member_rm">
+        <id property="memberNo" column="MEMBER_NO"/>
+        <result property="memberType" column="MEMBER_TYPE"/>
+        <result property="memberId" column="MEMBER_ID"/>
+        <result property="memberPw" column="MEMBER_PW"/>
+        <result property="memberNick" column="MEMBER_NICK"/>
+        <result property="profileImg" column="PROFILE_IMG"/>
+        <result property="phone" column="PHONE"/>
+        <result property="regionNo" column="REGION_NO"/>
+        <result property="stack" column="STACK"/>
+        <result property="skill" column="SKILL"/>
+        <result property="slogan" column="SLOGAN"/>
+        <result property="introduce" column="INTRODUCE"/>
+        <result property="totalPrice" column="TOTAL_PRICE"/>
+        <result property="currPrice" column="CURR_PRICE"/>
+        <result property="enrollDate" column="ENROLL_DATE"/>
+        <result property="secessionFlag" column="SECESSION_FL"/>
+        <result property="termsFlag" column="TERMS_FL"/>
+        <result property="snsFlag" column="SNS_FL"/>
+        <result property="likeCount" column="LIKE_COUNT"/>
+        <result property="victoryCount" column="VICTORY_COUNT"/>
+        <result property="attendCount" column="ATTEND_COUNT"/>
+    </resultMap>
 
-	<!-- 로그인 -->
-	 <select id="login" parameterType="member" resultMap="member_rm">
-	 	SELECT *
-		FROM MEMBER
-		WHERE MEMBER_ID = #{memberId}
-		AND SECESSION_FL = 'N'
-	 </select>
-	 
-	<!-- 회원 가입 -->
-	 <insert id="insertMember" parameterType="member">
-	 	insert into member (member_no, member_type, member_id, member_pw, member_nick) values (SEQ_MEMBER_NO.nextval, #{memberType}, #{memberId}, #{memberPw}, #{memberNick})
-	 </insert>
-	 
-	 <!-- 이메일 중복검사 -->
-	 <select id="emailDupCheck" parameterType="string" resultType="_int">
-  		SELECT COUNT(*) FROM MEMBER
-		WHERE MEMBER_ID = #{memberId}
-		AND SECESSION_FL = 'N'
-  	</select>
-  	
-  	<!-- 이메일 인증번호 db에 넣기 -->
-  	<insert id="insertRanNum" parameterType="hashmap">
-  		insert into certification (CLIST_NO, c_number, c_email) values (SEQ_CLIST_NO.NEXTVAL, #{randomNum}, #{email})
-  	</insert>
-  	
- 
-  	
-  	<!-- db에 들어간 인증번호랑 입력한 인증번호가 맞는지 확인 -->
-  	<select id="emailCertChk" parameterType="string" resultType="string">
-  		SELECT C_NUMBER 
+    <!-- 로그인 -->
+    <select id="login" parameterType="member" resultMap="member_rm">
+        SELECT *
+        FROM MEMBER
+        WHERE MEMBER_ID = #{memberId}
+        AND SECESSION_FL = 'N'
+    </select>
+
+    <!-- 회원 가입 -->
+    <insert id="insertMember" parameterType="member">
+        INSERT INTO member (member_no, member_type, member_id, member_pw, member_nick) VALUES (null, #{memberType}, #{memberId}, #{memberPw}, #{memberNick})
+    </insert>
+
+    <!-- 이메일 중복검사 -->
+    <select id="emailDupCheck" parameterType="string" resultType="_int">
+        SELECT COUNT(*)
+        FROM MEMBER
+        WHERE MEMBER_ID = #{memberId}
+        AND SECESSION_FL = 'N'
+    </select>
+
+    <!-- 이메일 인증번호 db에 넣기 -->
+    <insert id="insertRanNum" parameterType="hashmap">
+        INSERT INTO certification (CLIST_NO, c_number, c_email) VALUES (null, #{randomNum}, #{email})
+    </insert>
+
+    <!-- db에 들어간 인증번호랑 입력한 인증번호가 맞는지 확인 -->
+    <select id="emailCertChk" parameterType="string" resultType="string">
+        SELECT c_number
+        FROM (
+            SELECT c_number FROM certification WHERE c_email = #{memberEmail} ORDER BY clist_no DESC
+        ) AS temp
+        LIMIT 1
+    </select>
+
+    <!-- 현재 로그인한 회원의 암호화된 비밀번호 조회 -->
+    <select id="selectEncPw" resultType="string">
+        SELECT MEMBER_PW
+        FROM MEMBER
+        WHERE MEMBER_NO = #{memberNo}
+    </select>
+
+    <!-- 회원 탈퇴 -->
+    <update id="secession">
+        UPDATE MEMBER
+        SET SECESSION_FL = 'Y'
+        WHERE MEMBER_NO = #{memberNo}
+    </update>
+
+    <!-- 비밀번호 변경 -->
+    <update id="changePw">
+        UPDATE MEMBER
+        SET MEMBER_PW = #{newPw}
+        WHERE MEMBER_NO = #{memberNo}
+    </update>
+
+    <!-- 비밀번호 찾기 -->
+    <update id="pwFind">
+        UPDATE MEMBER
+        SET MEMBER_PW = #{memberPw}
+        WHERE MEMBER_ID = #{memberId}
+    </update>
+
+    <!-- 상금순 랭킹 조회 -->
+<!--     <select id="getPriceKingList" parameterType="_int" resultMap="member_rm">
+        SELECT
+		    (@row_number:=@row_number + 1) AS RANK,
+		    PROFILE_IMG, MEMBER_NICK, TOTAL_PRICE
 		FROM
-		(
-		select c_number from certification where c_email = #{memberEmail} order by clist_no desc 
-		)
-		WHERE ROWNUM = 1
-  	</select>
-  	  	
-  	<!-- 현재 로그인한 회원의 암호화된 비밀번호 조회 -->
-	<select id="selectEncPw" resultType="string">
-		SELECT MEMBER_PW
-		FROM MEMBER
-		WHERE MEMBER_NO = ${memberNo}
-	</select>
-  	
-  	<!-- 회원 탈퇴 -->
-	<update id="secession">
-		UPDATE MEMBER SET
-		SECESSION_FL = 'Y'
-		WHERE MEMBER_NO = ${memberNo}
-	</update>
-	
-	<!-- 비밀번호 변경 -->
-	<update id="changePw">
-		UPDATE MEMBER SET
-		MEMBER_PW = #{newPw}
-		WHERE MEMBER_NO = #{memberNo}
-	</update>
-	
-	
-	<!-- 비밀번호 찾기 -->
-	<update id="pwFind">
-		UPDATE MEMBER SET
-		MEMBER_PW = #{memberPw}
-		WHERE MEMBER_ID= #{memberId}
-	</update>
-	
+		    (SELECT PROFILE_IMG, MEMBER_NICK, TOTAL_PRICE
+		     FROM MEMBER
+		     WHERE TOTAL_PRICE IS NOT NULL
+		     ORDER BY TOTAL_PRICE DESC) ranked
+		CROSS JOIN (SELECT @row_number:=0) AS t
+		LIMIT #{offset}, #{pageSize}
+    </select> -->
 
-	<!-- 상금순 랭킹 조회 -->
-	<select id="getPriceKingList" parameterType="_int" resultMap="member_rm">
-		SELECT RANK() OVER (ORDER BY TOTAL_PRICE DESC) AS RANK, PROFILE_IMG, MEMBER_NICK, TOTAL_PRICE
-		FROM MEMBER
-		WHERE TOTAL_PRICE IS NOT NULL
-		OFFSET 0 ROWS FETCH NEXT #{offset} ROWS ONLY
-	</select>
-	
-	<!-- 상금순 랭킹 조회 -->
-	<select id="getVictoryKingList" parameterType="_int" resultMap="member_rm">
-		SELECT MEMBER_NO, VICTORY_COUNT, PROFILE_IMG, MEMBER_NICK
-		FROM MEMBER
-		WHERE VICTORY_COUNT > 0
-		ORDER BY VICTORY_COUNT DESC
-		OFFSET 0 ROWS FETCH NEXT #{offset} ROWS ONLY
-	</select>
-	
-	 <!-- 좋아요순 랭킹 조회 -->
-	<select id="getLikeKingList" resultMap="member_rm">
-		SELECT MEMBER_NO, LIKE_COUNT, PROFILE_IMG, MEMBER_NICK
-		FROM MEMBER
-		JOIN (
-		    SELECT P_MEMBER_NO, COUNT(P_MEMBER_NO) AS LIKE_COUNT
-		    FROM LIKE_USER
-		    GROUP BY P_MEMBER_NO
-		) LIKE_COUNTS
-		ON MEMBER_NO = LIKE_COUNTS.P_MEMBER_NO
-		ORDER BY LIKE_COUNTS.LIKE_COUNT DESC
-		OFFSET 0 ROWS FETCH NEXT #{offset} ROWS ONLY
-	</select>
+    <!-- 상금순 랭킹 조회 -->
+    <select id="getVictoryKingList" parameterType="_int" resultMap="member_rm">
+        SELECT MEMBER_NO, VICTORY_COUNT, PROFILE_IMG, MEMBER_NICK
+        FROM MEMBER
+        WHERE VICTORY_COUNT > 0
+        ORDER BY VICTORY_COUNT DESC
+        LIMIT #{offset}, #{pageSize}
+    </select>
 
-	   <!-- 개발자 찾기[ALL] (상금 순 정렬) -->
+    <!-- 좋아요순 랭킹 조회 -->
+    <select id="getLikeKingList" resultMap="member_rm">
+        SELECT MEMBER_NO, LIKE_COUNT, PROFILE_IMG, MEMBER_NICK
+        FROM MEMBER
+        JOIN (
+            SELECT P_MEMBER_NO, COUNT(P_MEMBER_NO) AS LIKE_COUNT
+            FROM LIKE_USER
+            GROUP BY P_MEMBER_NO
+        ) AS LIKE_COUNTS
+        ON MEMBER_NO = LIKE_COUNTS.P_MEMBER_NO
+        ORDER BY LIKE_COUNTS.LIKE_COUNT DESC
+        LIMIT #{offset}, #{pageSize}
+    </select>
 
-   <select id="getDevList"  resultMap="member_rm">
-		SELECT RANK() OVER (ORDER BY TOTAL_PRICE DESC) AS RANK, MEMBER_NO, PROFILE_IMG, MEMBER_NICK, TOTAL_PRICE, STACK, SLOGAN, ATTEND_COUNT, VICTORY_COUNT 
+    <!-- 개발자 찾기[ALL] (상금 순 정렬) -->
+<!--     <select id="getDevList" resultMap="member_rm">
+        SELECT
+		    RANK() OVER (ORDER BY TOTAL_PRICE DESC) AS RANK,
+		    MEMBER_NO, PROFILE_IMG, MEMBER_NICK, TOTAL_PRICE, STACK, SLOGAN, ATTEND_COUNT, VICTORY_COUNT
 		FROM MEMBER
-		<choose>
-	      <when test="filter == 'all'">
-	        WHERE MEMBER_TYPE = 'P'
-	      </when>
-	      <when test="filter == 'front'">
-	      	WHERE STACK = #{filter}
-	 
-	      </when>
-	       <when test="filter == 'back'">
-	      	WHERE STACK = #{filter}
-	   
-	      </when>
-	       <when test="filter == 'full'">
-	      	WHERE STACK = #{filter}
-	      
-	      </when>
-	    </choose>
-		OFFSET ${offset} ROWS FETCH NEXT ${pageSize} ROWS ONLY
-   </select>
+		WHERE
+		    (filter = 'all' AND MEMBER_TYPE = 'P') OR
+		    (filter = 'front' AND STACK = 'front') OR
+		    (filter = 'back' AND STACK = 'back') OR
+		    (filter = 'full' AND STACK = 'full')
+		LIMIT #{offset}, #{pageSize}
+    </select> -->
 
-	<update id="attendCountUp">
-		UPDATE MEMBER SET ATTEND_COUNT = ${attendCount} + 1
-		WHERE MEMBER_NO = ${memberNo}
-	</update>
+    <update id="attendCountUp">
+        UPDATE MEMBER
+        SET ATTEND_COUNT = ATTEND_COUNT + 1
+        WHERE MEMBER_NO = #{memberNo}
+    </update>
 
-	<!-- 기업 -> 개발자 좋아요 -->
-	<insert id="likeDev">
-		INSERT INTO LIKE_USER (LIKE_USER_NO, C_MEMBER_NO, P_MEMBER_NO)
-   		VALUES (SEQ_LIKE_USER_NO.NEXTVAL, ${cMemberNo}, ${pMemberNo})
-	</insert>
-	
-	<!-- 기업 -> 개발자 좋아요 취소 -->
-	<delete id="disLikeDev">
-		DELETE FROM LIKE_USER 
-   		WHERE C_MEMBER_NO = ${cMemberNo}
-   		AND P_MEMBER_NO = ${pMemberNo}
-	</delete>
-	
-	<!-- 좋아요 리스트 -->
-	<select id="getLikeList" resultType="integer">
-		SELECT P_MEMBER_NO 
-		FROM LIKE_USER
-		WHERE C_MEMBER_NO = ${loginMemberNo}
-	</select>
-	
-	
-</mapper> 
+    <!-- 기업 -> 개발자 좋아요 -->
+    <insert id="likeDev">
+        INSERT INTO LIKE_USER (LIKE_USER_NO, C_MEMBER_NO, P_MEMBER_NO) VALUES (null, #{cMemberNo}, #{pMemberNo})
+    </insert>
+
+    <!-- 기업 -> 개발자 좋아요 취소 -->
+    <delete id="disLikeDev">
+        DELETE FROM LIKE_USER
+        WHERE C_MEMBER_NO = #{cMemberNo}
+        AND P_MEMBER_NO = #{pMemberNo}
+    </delete>
+
+    <!-- 좋아요 리스트 -->
+    <select id="getLikeList" resultType="integer">
+        SELECT P_MEMBER_NO
+        FROM LIKE_USER
+        WHERE C_MEMBER_NO = #{loginMemberNo}
+    </select>
+</mapper>
